@@ -9,6 +9,11 @@
 ; что нам в данной ситуаци не нужно
 
 ; Процедура sqrt-iter постоянно будет вызывать сама себя, не возвращая при этом никакого значения.
+
+; Problem with that procedure is that before computing final value
+; (new-if then else) the value of then and else will be calculated first
+
+; Procedure sqrt-iter will always calling itself but not return any value
 (define (square x)
   (* x x))
 (define (sqrt-iter guess x)
